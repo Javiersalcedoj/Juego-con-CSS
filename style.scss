@@ -1,0 +1,368 @@
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    overflow-y: hidden;
+    counter-reset: game;
+}
+input:checked {
+    counter-increment: game;
+}
+.total-count::after {
+    content: counter(game);
+}
+h3 {
+    position: absolute;
+    left: calc(50% - 32.5px);
+    top: 60px;
+}
+.phone {
+    position: relative;
+    width: 300px;
+    height: 600px;
+    background-color: #ccefff;
+    border: 8px solid black;
+    border-radius: 40px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+    .layers {
+        position: absolute;
+    }
+    .layer-1 {
+        bottom: 0;
+        right: 60px;
+        height: 450px;
+        width: 80px;
+        z-index: 1;
+
+        animation: layer 1s ease-in-out 0s infinite;
+        @keyframes layer {
+            0% {
+                transform: translateY(80px);
+            }
+            25% {
+                transform: translateY(0px);
+            }
+            100% {
+                transform: translateY(80px);
+            }
+        }
+        // que si tienes una clase padre layer1 vamos a trabajar en un hijo llamado input de tipo checkbox
+        & input[type=checkbox] {
+            position: absolute;
+            appearance: none;
+            cursor: pointer;
+            z-index: 1;
+            width: 100%;
+            height: 80px;
+        }
+    }
+    
+    .layer-2 {
+        bottom: 0;
+        left: 60px;
+        height: 450px;
+        width: 80px;
+        z-index: 2;
+        animation: layer2 0.5s ease-in-out 0s infinite;
+
+        @keyframes layer2 {
+            0% {
+                transform: translateY(80px);
+            }
+            25% {
+                transform: translateY(0px);
+            }
+            100% {
+                transform: translateY(80px);
+            }
+        }
+        & input[type=checkbox] {
+            position: absolute;
+            appearance: none;
+            cursor: pointer;
+            z-index: 1;
+            width: 100%;
+            height: 80px;
+        }   
+    }
+    .layer-3 {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0 auto;
+        width: 220px;
+        height: 400px;
+        z-index: 3;
+    }
+    .layer-4 {
+        bottom: 0;
+        left: 20px;
+        height: 320px;
+        width: 80px;
+        z-index: 4;
+        animation: layer3 1.5s ease-in-out 0s infinite;
+        
+        @keyframes layer3 {
+            0% {
+                transform: translateY(80px);
+            }
+            25% {
+                transform: translateY(0px);
+            }
+            100% {
+                transform: translateY(80px);
+            }
+        }
+        & input[type=checkbox] {
+            position: absolute;
+            appearance: none;
+            cursor: pointer;
+            z-index: 1;
+            width: 100%;
+            height: 80px;
+        }  
+    }
+    .layer-5 {
+        left: 0;
+        bottom: 0;
+        width: 190px;
+        height: 270px;
+        z-index: 5;
+    }
+    .layer-6 {
+        bottom: 0;
+        right: 40px;
+        height: 210px;
+        width: 80px;
+        z-index: 6;
+
+        animation: layer4 1.2s ease-in-out 0s infinite;
+        
+        @keyframes layer4 {
+            0% {
+                transform: translateY(80px);
+            }
+            25% {
+                transform: translateY(0px);
+            }
+            100% {
+                transform: translateY(80px);
+            }
+        }
+        & input[type=checkbox] {
+            position: absolute;
+            appearance: none;
+            cursor: pointer;
+            z-index: 1;
+            width: 100%;
+            height: 80px;
+        }  
+    }
+    .layer-7 {
+        right: 0;
+        bottom: 0;
+        width: 160px;
+        height: 160px;
+        z-index: 7;
+    }
+    .layer-8 {
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 160px;
+        height: 100px;
+        z-index: 8;
+    }
+    .layer-9 {
+        bottom: 0;
+        left: 0;
+        width: 110px;
+        height: 90px;
+        z-index: 9;
+    }
+    .layer-10 {
+        bottom: 0;
+        right: 0;
+        width: 110px;
+        height: 90px;
+        z-index: 10;
+    }
+}
+
+
+.rabbit {
+    .left-ear--outer {
+        position: absolute;
+        left: 10px;
+        width: 20px;
+        height: 50px;
+        border-radius: 90%;
+        background: white;
+    }
+    .left-ear--inner {
+        position: absolute;
+        left: 15px;
+        top: 8px;
+        width: 10px;
+        height: 50px;
+        border-radius: 90%;
+        background: pink;
+    }
+    .right-ear--outer {
+        position: absolute;
+        right: 10px;
+        width: 20px;
+        height: 50px;
+        border-radius: 90%;
+        background: white;
+    }
+    .right-ear--inner {
+        position: absolute;
+        right: 15px;
+        top: 8px;
+        width: 10px;
+        height: 50px;
+        border-radius: 90%;
+        background: pink;
+    }
+    .head {
+        position: absolute;
+        top: 30px;
+        left: 0;
+        right: 0;
+        margin: 0 auto ;
+        width: 100%;
+        height: 80px;
+        border-radius: 50%;
+        background: white;
+        .head__eye {
+            position: absolute;
+            top: 15px;
+            width: 5px;
+            height: 5px;
+            border-radius: 100%;
+            background: black;
+
+            animation-name: blink;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            @keyframes blink {
+                10% {
+                    height: 5px;
+                }
+                15% {
+                    transform: translateY(2px);
+                    height: 1px;
+                }
+                20% {
+                    transform: translateY(0px);
+                    height: 5px;
+                }
+            }
+
+            &.eye--left {
+                left: 30px;
+            }
+            &.eye--right {
+                right: 30px;
+            }
+        }
+    }
+
+}
+
+.column {
+    .brown{
+        width: 100%;
+        height: 100%;
+        border-radius: 30px;
+        background: peru;
+        // box-shadow: 7px 5px 15px -5px sienna, -7px 5px 15px -5px sienna, ;
+    }
+    .n2 {
+        box-shadow: 5px 0 4px -2px sienna;
+    }
+    .n3 {
+        box-shadow: -5px 0 4px -2px sienna;
+    }
+    .dark-brown {
+        position: absolute;
+        top: 30px;
+        left: 0;
+        width: 100%;
+        height: 20px;
+        background: linear-gradient(45deg, sienna 7px, transparent 7px) 0px -10px,
+        linear-gradient(-135deg, sienna 7px, transparent 7px) 10px -10px,
+        linear-gradient(135deg, sienna 7px, transparent 7px) 10px -10px,
+        linear-gradient(-45deg, sienna 7px, transparent 7px) 20px 10px;
+        background-size: 20px 20px;
+    }
+    .green {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 40px;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        background: rgb(50, 205, 50);
+    }
+}
+.plant-green-container {
+    .plant-greem{
+        position: absolute;
+        width: 40%;
+        height: 100%;
+        border-top-left-radius: 60%;
+        border-top-right-radius: 60%;
+        background: rgb(50, 205, 50);
+    }
+    .plant-greem--1 {
+        border-radius: 60%;
+        transform: rotate(-30deg);
+    }
+    .plant-greem--2 {
+        border-radius: 60%;
+        right: 0;
+        transform: rotate(30deg);
+    }
+    .plant-greem--3 {
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 80%;
+    }
+}
+.plant-write-container {
+    .plant1 {
+        position: absolute;
+        width: 60%;
+        height: 100%;
+        border-top-left-radius: 40%;
+        border-top-right-radius: 40%;
+        border-bottom-left-radius: 30px;
+        background: white;
+        &.plant--right {
+            right: 0px;
+            border-bottom-right-radius: 50px;
+        }
+    }
+    .plant2 {
+        position: absolute;
+        bottom: 0px;
+        width: 110%;
+        height: 70%;
+        border-top-right-radius: 40%;
+        border-bottom-right-radius: 40%;
+        border-bottom-left-radius: 26px;
+        background: white;
+        &.plant--right {
+            right: 0px;
+            border-top-left-radius: 30px;
+            transform: rotate(180deg);
+        }
+    }
+
+}
